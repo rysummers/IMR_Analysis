@@ -1,4 +1,4 @@
-# IMR Analysis
+# Independent Medical Review (IMR) Analysis
 
 ## Introduction
 The health care industry in the US is one of the largest areas of spending in the country.
