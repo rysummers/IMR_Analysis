@@ -146,7 +146,8 @@ imr_df %>%
         legend.background = element_rect(fill = 'transparent'))
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](r-pics/unnamed-chunk-6-1.png)<!-- -->
+(r-pics/unnamed-chunk-6-1.png){width=400px}
 
 ``` r
 #### Determinations by Medical Type
