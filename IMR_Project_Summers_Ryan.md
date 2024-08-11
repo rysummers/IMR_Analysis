@@ -147,7 +147,6 @@ imr_df %>%
 ```
 
 ![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-![Some text here.](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-6-1.png){width=400px}
 
 ``` r
 #### Determinations by Medical Type
