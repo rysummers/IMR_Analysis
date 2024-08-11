@@ -147,7 +147,6 @@ imr_df %>%
 ```
 
 ![](r-pics/unnamed-chunk-6-1.png)<!-- -->
-(r-pics/unnamed-chunk-6-1.png){width=400px}
 
 ``` r
 #### Determinations by Medical Type
@@ -190,7 +189,7 @@ imr_df %>%
         legend.background = element_rect(fill = 'transparent'))
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](r-pics/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 #### Days in Review by Age Group
@@ -211,7 +210,7 @@ imr_df %>%
   guides(fill=F)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](r-pics/unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
 #### Days to adopt by Age Group
@@ -232,7 +231,7 @@ imr_df %>%
   guides(fill=F)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](r-pics/unnamed-chunk-9-1.png)<!-- -->
 
 ``` r
 #### Days in Total by Age Group
@@ -252,7 +251,7 @@ imr_df %>%
                      limits = c(0, 700))
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](r-pics/unnamed-chunk-11-1.png)<!-- -->
 
 ``` r
 # number of outliers
@@ -296,7 +295,7 @@ ggplot(imr_df, aes(x = total_days, y = after_stat(density))) +
   geom_density(fill='orange', color = "orange", linewidth = .50, alpha=0.25)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](r-pics/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 #### review overturned cases by year
@@ -318,7 +317,7 @@ imr_df %>%
        y = "Cases")
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](r-pics/unnamed-chunk-13-1.png)<!-- -->
 
 ``` r
 imr_df %>% 
@@ -369,7 +368,7 @@ imr_df2 %>%
         legend.position = 'none')
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](r-pics/unnamed-chunk-15-1.png)<!-- -->
 
 ``` r
 #### Days in Total by Gender
@@ -394,7 +393,7 @@ imr_df2 %>%
         legend.position = 'none')
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](r-pics/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 imr_df %>% 
@@ -659,7 +658,7 @@ imr.test.knn <- c2 %>%
 pca.train <- PCA(t(select(imr.train.knn, -determination)), ncp = 200)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/PCA-1.png)<!-- -->![](IMR_Project_Summers_Ryan_files/figure-gfm/PCA-2.png)<!-- -->
+![](r-pics/PCA-1.png)<!-- -->![](r-pics/PCA-2.png)<!-- -->
 
 ``` r
 train.test <- as.data.frame(pca.train$eig)
@@ -679,7 +678,7 @@ imr.train.pca <- data.frame(imr.train.knn$determination, pca.train$var$coord)
 pca.test <- PCA(t(select(imr.test.knn, -determination)), ncp=200)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/PCA-3.png)<!-- -->
+![](r-pics/PCA-3.png)<!-- -->
 
 ``` r
 #fviz_screeplot(pca.test, ncp=20)
@@ -801,7 +800,7 @@ nb.model2$results %>%
 plot(nb.model2)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Model%201-1.png)<!-- -->
+![](r-pics/Model%201-1.png)<!-- -->
 
 ``` r
 nb.pred <- predict(nb.model2, newdata=imr.test[, c(3,5,8,9,15)])
@@ -829,7 +828,7 @@ plot(RP.perf,
      add=T)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Results%20Plot-1.png)<!-- -->
+![](r-pics/Results%20Plot-1.png)<!-- -->
 
 ``` r
 # ROC curve
@@ -845,7 +844,7 @@ plot(ROC.perf,
      add=T)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Results%20Plot-2.png)<!-- -->
+![](r-pics/Results%20Plot-2.png)<!-- -->
 
 ``` r
 # ROC area under the curve
@@ -857,7 +856,7 @@ auc <- as.numeric(auc.tmp@y.values)
 draw_confusion_matrix(nb.cm)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/CM%20Plot-1.png)<!-- -->
+![](r-pics/CM%20Plot-1.png)<!-- -->
 
 ### KNN model
 
@@ -897,7 +896,7 @@ knn.model1$results %>%
 plot(knn.model1)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Model%202-1.png)<!-- -->
+![](r-pics/Model%202-1.png)<!-- -->
 
 ``` r
 knn.pred <- predict(knn.model1, newdata=select(imr.test.pca,
@@ -945,7 +944,7 @@ knn.model2$results %>%
 plot(knn.model2)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Model%202.1-1.png)<!-- -->
+![](r-pics/Model%202.1-1.png)<!-- -->
 
 ``` r
 #confusionMatrix(model)
@@ -977,7 +976,7 @@ plot(RP.perf,
      add=T)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Results%20Plot%202-1.png)<!-- -->
+![](r-pics/Results%20Plot%202-1.png)<!-- -->
 
 ``` r
 # ROC curve
@@ -993,7 +992,7 @@ plot(ROC.perf,
      add=T)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Results%20Plot%202-2.png)<!-- -->
+![](r-pics/Results%20Plot%202-2.png)<!-- -->
 
 ``` r
 # ROC area under the curve
@@ -1005,7 +1004,7 @@ auc <- as.numeric(auc.tmp@y.values)
 draw_confusion_matrix(knn2.cm)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/CM%20Plot%202-1.png)<!-- -->
+![](r-pics/CM%20Plot%202-1.png)<!-- -->
 
 ### SVM
 
@@ -1032,7 +1031,7 @@ svm.model1 <- readRDS("/Users/ryan_summers/Syracuse - M.S. Applied Data Science/
 plot(svm.model1)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Model%203-1.png)<!-- -->
+![](r-pics/Model%203-1.png)<!-- -->
 
 ``` r
 # top 5 models
@@ -1147,7 +1146,7 @@ rf.model1 <- readRDS("/Users/ryan_summers/Syracuse - M.S. Applied Data Science/I
 plot(rf.model1)
 ```
 
-![](IMR_Project_Summers_Ryan_files/figure-gfm/Model%204-1.png)<!-- -->
+![](r-pics/Model%204-1.png)<!-- -->
 
 ``` r
 # top 5 models
